@@ -1,0 +1,11 @@
+--- origsrc/harfbuzz-0.9.4/src/Makefile.am	2012-08-28 18:00:33.000000000 -0500
++++ src/harfbuzz-0.9.4/src/Makefile.am	2012-09-10 19:04:20.651085800 -0500
+@@ -180,8 +180,6 @@ export_symbols = -export-symbols harfbuz
+ harfbuzz_def_dependency = harfbuzz.def
+ endif
+ 
+-# Use a C linker, not C++; Don't link to libstdc++
+-libharfbuzz_la_LINK = $(LINK) $(libharfbuzz_la_LDFLAGS)
+ libharfbuzz_la_SOURCES = $(HBSOURCES) $(HBHEADERS)
+ nodist_libharfbuzz_la_SOURCES = $(nodist_HBSOURCES)
+ libharfbuzz_la_CPPFLAGS = $(HBCFLAGS)

@@ -1,0 +1,18 @@
+NAME="harfbuzz"
+VERSION=0.9.4
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="OpenType text shaping engine"
+DESCRIPTION="HarfBuzz is an OpenType text shaping engine."
+HOMEPAGE="http://www.freedesktop.org/wiki/Software/HarfBuzz"
+SRC_URI="http://www.freedesktop.org/software/harfbuzz/release/${NAME}-${VERSION}.tar.bz2"
+PATCH_URI="01-link-cxx.patch"
+
+CYGCONF_ARGS="ac_cv_header_usp10_h=no ac_cv_header_windows_h=no ac_cv_func__setmode=no"
+
+PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-devel"
+harfbuzz_CONTENTS="usr/bin/hb* usr/share/doc/"
+libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz-0.dll"
+libharfbuzz_devel_CONTENTS="usr/include/ usr/lib/"
+
+KEEP_LA_FILES="none"
