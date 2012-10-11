@@ -1,6 +1,6 @@
 NAME="harfbuzz"
 VERSION=0.9.4
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 SUMMARY="OpenType text shaping engine"
 DESCRIPTION="HarfBuzz is an OpenType text shaping engine."
