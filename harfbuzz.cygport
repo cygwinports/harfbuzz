@@ -1,6 +1,6 @@
 NAME="harfbuzz"
-VERSION=0.9.4
-RELEASE=2
+VERSION=0.9.9
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="OpenType text shaping engine"
 DESCRIPTION="HarfBuzz is an OpenType text shaping engine."
@@ -13,6 +13,7 @@ CYGCONF_ARGS="ac_cv_header_usp10_h=no ac_cv_header_windows_h=no ac_cv_func__setm
 PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-devel"
 harfbuzz_CONTENTS="usr/bin/hb* usr/share/doc/"
 libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz-0.dll"
+libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel libicu-devel"
 libharfbuzz_devel_CONTENTS="usr/include/ usr/lib/"
 
 KEEP_LA_FILES="none"
