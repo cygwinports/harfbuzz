@@ -1,0 +1,11 @@
+--- origsrc/harfbuzz-0.9.15/src/hb-atomic-private.hh	2013-04-04 14:01:42.000000000 -0500
++++ src/harfbuzz-0.9.15/src/hb-atomic-private.hh	2013-04-15 21:30:16.932910500 -0500
+@@ -42,7 +42,7 @@
+ #if 0
+ 
+ 
+-#elif !defined(HB_NO_MT) && (defined(_WIN32) || defined(__CYGWIN__))
++#elif !defined(HB_NO_MT) && defined(_WIN32)
+ 
+ #define WIN32_LEAN_AND_MEAN
+ #include <windows.h>
