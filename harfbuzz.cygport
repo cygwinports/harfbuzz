@@ -21,4 +21,11 @@ DEPEND="pkgconfig(cairo)
 	pkgconfig(graphite2)
 	pkgconfig(icu-le)"
 
+if defined ARCH_x86_64
+then
+	# bug in BFD relocation code
+	CFLAGS+=" -mcmodel=large"
+	CXXFLAGS+=" -mcmodel=large"
+fi
+
 KEEP_LA_FILES="none"
