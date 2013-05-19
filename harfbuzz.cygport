@@ -24,8 +24,7 @@ DEPEND="pkgconfig(cairo)
 if defined ARCH_x86_64
 then
 	# bug in BFD relocation code
-	CFLAGS+=" -mcmodel=large"
-	CXXFLAGS+=" -mcmodel=large"
+	MAKEOPTS+=" export_symbols=-Wl,--image-base,0x7f000000"
 fi
 
 KEEP_LA_FILES="none"
