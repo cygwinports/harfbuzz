@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=0.9.15
+VERSION=0.9.17
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="OpenType text shaping engine"
@@ -20,11 +20,5 @@ DEPEND="pkgconfig(cairo)
 	pkgconfig(gobject-2.0)
 	pkgconfig(graphite2)
 	pkgconfig(icu-le)"
-
-if defined ARCH_x86_64
-then
-	# bug in BFD relocation code
-	MAKEOPTS+=" export_symbols=-Wl,--image-base,0x7f000000"
-fi
 
 KEEP_LA_FILES="none"
