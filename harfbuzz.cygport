@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=0.9.19
+VERSION=0.9.25
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
@@ -20,7 +20,7 @@ DEPEND="pkgconfig(cairo)
 	pkgconfig(freetype2)
 	pkgconfig(gobject-2.0)
 	pkgconfig(graphite2)
-	pkgconfig(icu-le)"
+	pkgconfig(icu-uc)"
 
 CYGCONF_ARGS="
 	--with-cairo
