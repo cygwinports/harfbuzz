@@ -9,17 +9,6 @@
  		;;
  		*)
  			# Hide inline methods
---- origsrc/harfbuzz-0.9.15/src/hb-private.hh	2013-03-19 06:04:53.000000000 -0500
-+++ src/harfbuzz-0.9.15/src/hb-private.hh	2013-04-15 21:36:51.270263500 -0500
-@@ -176,7 +176,7 @@ ASSERT_STATIC (sizeof (hb_var_int_t) ==
- #endif
- 
- #ifndef HB_INTERNAL
--# ifndef __MINGW32__
-+# if !defined(__MINGW32__) && !defined(__CYGWIN__)
- #  define HB_INTERNAL __attribute__((__visibility__("hidden")))
- # else
- #  define HB_INTERNAL
 --- origsrc/harfbuzz-0.9.15/src/hb-ucdn/ucdn.h	2012-10-02 16:41:15.000000000 -0500
 +++ src/harfbuzz-0.9.15/src/hb-ucdn/ucdn.h	2013-04-15 21:38:01.680360700 -0500
 @@ -17,7 +17,7 @@

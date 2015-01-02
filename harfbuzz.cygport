@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=0.9.25
+VERSION=0.9.36
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
@@ -9,10 +9,11 @@ SRC_URI="http://www.freedesktop.org/software/harfbuzz/release/${NAME}-${VERSION}
 PATCH_URI="0.9.15-cygwin-atomics.patch
            0.9.15-cygwin-visibility.patch"
 
-PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-devel"
+PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-icu0 libharfbuzz-devel"
 harfbuzz_CATEGORY="X11"
 harfbuzz_CONTENTS="usr/bin/hb* usr/share/doc/"
-libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz*-0.dll"
+libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz-0.dll"
+libharfbuzz_icu0_CONTENTS="usr/bin/cygharfbuzz-icu-0.dll"
 libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel libicu-devel"
 libharfbuzz_devel_CONTENTS="usr/include/ usr/lib/"
 
