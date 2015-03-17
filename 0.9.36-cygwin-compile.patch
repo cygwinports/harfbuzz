@@ -1,0 +1,40 @@
+Cygwin headers don't support feature_test_macros(7) properly
+
+--- origsrc/harfbuzz-0.9.36/util/helper-cairo.cc	2014-07-08 17:10:13.985106200 -0500
++++ src/harfbuzz-0.9.36/util/helper-cairo.cc	2015-03-16 19:27:47.615826400 -0500
+@@ -24,6 +24,7 @@
+  * Google Author(s): Behdad Esfahbod
+  */
+ 
++#undef __STRICT_ANSI__
+ #include "helper-cairo.hh"
+ 
+ #include <cairo-ft.h>
+--- origsrc/harfbuzz-0.9.36/util/options.cc	2014-07-25 11:34:02.597624500 -0500
++++ src/harfbuzz-0.9.36/util/options.cc	2015-03-16 19:27:59.442328100 -0500
+@@ -24,6 +24,7 @@
+  * Google Author(s): Behdad Esfahbod
+  */
+ 
++#undef __STRICT_ANSI__
+ #include "options.hh"
+ 
+ #ifdef HAVE_FREETYPE
+@@ -456,7 +457,7 @@ font_options_t::get_font (void) const
+       GString *gs = g_string_new (NULL);
+       char buf[BUFSIZ];
+ #if defined(_WIN32) || defined(__CYGWIN__)
+-      setmode (fileno (stdin), _O_BINARY);
++      setmode (fileno (stdin), O_BINARY);
+ #endif
+       while (!feof (stdin)) {
+ 	size_t ret = fread (buf, 1, sizeof (buf), stdin);
+@@ -628,7 +629,7 @@ output_options_t::get_file_handle (void)
+     fp = fopen (output_file, "wb");
+   else {
+ #if defined(_WIN32) || defined(__CYGWIN__)
+-    setmode (fileno (stdout), _O_BINARY);
++    setmode (fileno (stdout), O_BINARY);
+ #endif
+     fp = stdout;
+   }
