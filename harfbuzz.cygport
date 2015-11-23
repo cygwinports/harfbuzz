@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=1.0.5
+VERSION=1.0.6
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
@@ -12,13 +12,24 @@ PATCH_URI="
 	0.9.36-cygwin-compile.patch
 "
 
-PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-icu0 libharfbuzz-devel"
+PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-icu0 libharfbuzz-devel libharfbuzz-icu-devel"
 harfbuzz_CATEGORY="X11"
 harfbuzz_CONTENTS="usr/bin/hb* usr/share/doc/"
 libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz-0.dll"
 libharfbuzz_icu0_CONTENTS="usr/bin/cygharfbuzz-icu-0.dll"
-libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel libicu-devel"
-libharfbuzz_devel_CONTENTS="usr/include/ usr/lib/"
+libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel"
+libharfbuzz_devel_CONTENTS="
+	--exclude=hb-icu.h
+	usr/include/harfbuzz
+	usr/lib/libharfbuzz.dll.a
+	usr/lib/pkgconfig/harfbuzz.pc
+"
+libharfbuzz_icu_devel_REQUIRES="libicu-devel"
+libharfbuzz_icu_devel_CONTENTS="
+	usr/include/harfbuzz/hb-icu.h
+	usr/lib/libharfbuzz-icu.dll.a
+	usr/lib/pkgconfig/harfbuzz-icu.pc
+"
 
 DEPEND="pkgconfig(cairo)
 	pkgconfig(freetype2)
