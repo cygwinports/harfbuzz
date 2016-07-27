@@ -1,0 +1,11 @@
+--- origsrc/harfbuzz-1.2.7/src/hb-atomic-private.hh	2016-01-06 06:00:36.000000000 -0600
++++ src/harfbuzz-1.2.7/src/hb-atomic-private.hh	2016-07-27 01:52:04.394894900 -0500
+@@ -46,7 +46,7 @@
+ /* Defined externally, i.e. in config.h; must have typedef'ed hb_atomic_int_impl_t as well. */
+ 
+ 
+-#elif !defined(HB_NO_MT) && (defined(_WIN32) || defined(__CYGWIN__))
++#elif !defined(HB_NO_MT) && defined(_WIN32)
+ 
+ #include <windows.h>
+ 
