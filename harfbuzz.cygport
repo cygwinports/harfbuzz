@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=1.2.7
+VERSION=1.3.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
