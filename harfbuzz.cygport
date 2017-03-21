@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=1.3.3
+VERSION=1.3.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
@@ -19,7 +19,7 @@ harfbuzz_CONTENTS="usr/bin/hb* usr/share/doc/"
 libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz-0.dll"
 libharfbuzz_gobject0_CONTENTS="usr/bin/cygharfbuzz-gobject-0.dll"
 libharfbuzz_icu0_CONTENTS="usr/bin/cygharfbuzz-icu-0.dll"
-libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel"
+libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel girepository-HarfBuzz0.0"
 libharfbuzz_devel_CONTENTS="
 	--exclude=hb-gobject*.h
 	--exclude=hb-icu.h
