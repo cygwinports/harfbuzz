@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=1.4.8
+VERSION=1.7.4
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
@@ -59,5 +59,3 @@ CYGCONF_ARGS="
 	--without-directwrite
 	--without-uniscribe
 "
-
-KEEP_LA_FILES="none"
