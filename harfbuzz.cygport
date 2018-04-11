@@ -1,5 +1,5 @@
 NAME="harfbuzz"
-VERSION=1.7.4
+VERSION=1.7.6
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
@@ -11,34 +11,45 @@ PATCH_URI="
 	0.9.15-cygwin-visibility.patch
 "
 
-PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-gobject0 libharfbuzz-icu0
-           libharfbuzz-devel libharfbuzz-gobject-devel libharfbuzz-icu-devel
-           girepository-HarfBuzz0.0"
+PKG_NAMES="harfbuzz libharfbuzz0 libharfbuzz-devel
+	   libharfbuzz-gobject0 libharfbuzz-gobject-devel
+	   libharfbuzz-subset0 libharfbuzz-subset-devel
+	   libharfbuzz-icu0 libharfbuzz-icu-devel
+	   girepository-HarfBuzz0.0"
 harfbuzz_CATEGORY="X11"
 harfbuzz_CONTENTS="usr/bin/hb* usr/share/doc/"
 libharfbuzz0_CONTENTS="usr/bin/cygharfbuzz-0.dll"
-libharfbuzz_gobject0_CONTENTS="usr/bin/cygharfbuzz-gobject-0.dll"
-libharfbuzz_icu0_CONTENTS="usr/bin/cygharfbuzz-icu-0.dll"
 libharfbuzz_devel_REQUIRES="libfreetype-devel libglib2.0-devel girepository-HarfBuzz0.0"
 libharfbuzz_devel_CONTENTS="
 	--exclude=hb-gobject*.h
 	--exclude=hb-icu.h
-	usr/include/harfbuzz
+	--exclude=hb-subset*
+	usr/include/harfbuzz/
 	usr/lib/libharfbuzz.dll.a
 	usr/lib/pkgconfig/harfbuzz.pc
 "
+libharfbuzz_gobject0_CONTENTS="usr/bin/cygharfbuzz-gobject-0.dll"
 libharfbuzz_gobject_devel_CONTENTS="
 	usr/include/harfbuzz/hb-gobject*.h
 	usr/lib/libharfbuzz-gobject.dll.a
 	usr/lib/pkgconfig/harfbuzz-gobject.pc
 "
+libharfbuzz_icu0_CONTENTS="usr/bin/cygharfbuzz-icu-0.dll"
 libharfbuzz_icu_devel_REQUIRES="libicu-devel"
 libharfbuzz_icu_devel_CONTENTS="
 	usr/include/harfbuzz/hb-icu.h
 	usr/lib/libharfbuzz-icu.dll.a
 	usr/lib/pkgconfig/harfbuzz-icu.pc
 "
+libharfbuzz_subset0_CONTENTS="usr/bin/cygharfbuzz-subset-0.dll"
+libharfbuzz_subset_devel_CONTENTS="
+	usr/include/harfbuzz/hb-subset*
+	usr/lib/libharfbuzz-subset.dll.a
+	usr/lib/pkgconfig/harfbuzz-subset.pc
+"
 girepository_HarfBuzz0_0_CONTENTS="usr/*/gir*-1.0/HarfBuzz-0.0.*"
+# not auto-generated, needs fixing for portability
+PKG_IGNORE="usr/lib/cmake/harfbuzz/"
 
 DEPEND="pkgconfig(cairo)
 	pkgconfig(freetype2)
