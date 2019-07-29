@@ -1,13 +1,12 @@
 NAME="harfbuzz"
-VERSION=1.7.6
+VERSION=2.5.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="OpenType text shaping engine"
 DESCRIPTION="HarfBuzz is an OpenType text shaping engine."
 HOMEPAGE="http://www.freedesktop.org/wiki/Software/HarfBuzz"
-SRC_URI="http://www.freedesktop.org/software/harfbuzz/release/${NAME}-${VERSION}.tar.bz2"
+SRC_URI="https://www.freedesktop.org/software/harfbuzz/release/${NAME}-${VERSION}.tar.xz"
 PATCH_URI="
-	1.2.7-cygwin-atomics.patch
 	0.9.15-cygwin-visibility.patch
 "
 

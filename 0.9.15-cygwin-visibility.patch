@@ -9,14 +9,3 @@
  		;;
  		*)
  			# Hide inline methods
---- origsrc/harfbuzz-0.9.15/src/hb-ucdn/ucdn.h	2012-10-02 16:41:15.000000000 -0500
-+++ src/harfbuzz-0.9.15/src/hb-ucdn/ucdn.h	2013-04-15 21:38:01.680360700 -0500
-@@ -17,7 +17,7 @@
- #ifndef UCDN_H
- #define UCDN_H
- 
--#if defined(__GNUC__) && (__GNUC__ >= 4) && !defined(__MINGW32__)
-+#if defined(__GNUC__) && (__GNUC__ >= 4) && !defined(__MINGW32__) && !defined(__CYGWIN__)
- # define HB_BEGIN_VISIBILITY _Pragma ("GCC visibility push(hidden)")
- # define HB_END_VISIBILITY _Pragma ("GCC visibility pop")
- #else
